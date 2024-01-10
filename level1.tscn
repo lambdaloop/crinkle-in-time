@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcom4ftm40tf6"]
+
+[ext_resource type="Script" path="res://StaticBody2D.gd" id="1_2o6lx"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5o74b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he87v"]
+size = Vector2(391.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly8cx"]
+size = Vector2(34, 31)
+
+[node name="level1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+input_pickable = true
+script = ExtResource("1_2o6lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(593.25, 333)
+shape = SubResource("RectangleShape2D_he87v")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_5o74b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(523, 207.5)
+shape = SubResource("RectangleShape2D_ly8cx")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 53.0
+offset_right = 164.0
+offset_bottom = 116.0
+
+[connection signal="mouse_entered" from="StaticBody2D" to="StaticBody2D" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_entered"]
