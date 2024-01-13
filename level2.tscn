@@ -6,11 +6,11 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b3som")
 
-[node name="ConnectionPoint" parent="." instance=ExtResource("2_skcpf")]
+[node name="ConnectionPoint" parent="." groups=["connection_pts"] instance=ExtResource("2_skcpf")]
 position = Vector2(185, 440)
 
-[node name="ConnectionPoint2" parent="." instance=ExtResource("2_skcpf")]
+[node name="ConnectionPoint2" parent="." groups=["connection_pts"] instance=ExtResource("2_skcpf")]
 position = Vector2(783, 436)
 
-[node name="ConnectionPoint3" parent="." instance=ExtResource("2_skcpf")]
+[node name="ConnectionPoint3" parent="." groups=["connection_pts"] instance=ExtResource("2_skcpf")]
 position = Vector2(517, 251)
