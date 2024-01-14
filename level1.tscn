@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcom4ftm40tf6"]
+[gd_scene load_steps=20 format=3 uid="uid://bcom4ftm40tf6"]
 
 [ext_resource type="Script" path="res://level1.gd" id="1_ah5r8"]
 [ext_resource type="Texture2D" uid="uid://6oc67hil64fo" path="res://assets/background-1A-filtered.jpg" id="2_2xepe"]
@@ -28,8 +28,14 @@ size = Vector2(1009, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3ctj"]
 size = Vector2(155, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xmu7"]
+size = Vector2(192, 34)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q72rk"]
 size = Vector2(123, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0e0j"]
+size = Vector2(79, 50)
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_ah5r8")
@@ -75,7 +81,7 @@ position = Vector2(-45, -114)
 position = Vector2(-739, -178)
 
 [node name="Area2D7" parent="circles" instance=ExtResource("6_6ovls")]
-position = Vector2(216, 247)
+position = Vector2(217, 244)
 
 [node name="Area2D8" parent="circles" instance=ExtResource("6_6ovls")]
 position = Vector2(-22, 248)
@@ -131,8 +137,22 @@ shape = SubResource("RectangleShape2D_3407k")
 position = Vector2(1084.5, 518)
 shape = SubResource("RectangleShape2D_j3ctj")
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="collisions"]
+position = Vector2(997, 565)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D6"]
+position = Vector2(-133, 149)
+shape = SubResource("RectangleShape2D_4xmu7")
+
 [node name="StaticBody2D3" type="StaticBody2D" parent="collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D3"]
 position = Vector2(1223.5, 518)
 shape = SubResource("RectangleShape2D_q72rk")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="collisions"]
+position = Vector2(988, 588)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D5"]
+position = Vector2(257, 125)
+shape = SubResource("RectangleShape2D_j0e0j")
