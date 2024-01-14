@@ -6,7 +6,7 @@ class_name Jane
 
 func _physics_process(delta):
     # Handle jump.
-    velocity.x = 40
+    velocity.x = 25
     super._physics_process(delta)
 
     

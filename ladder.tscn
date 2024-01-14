@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl8ivp7q774hf"]
+
+[ext_resource type="Texture2D" uid="uid://7lfxcy7wmbx3" path="res://assets/item-sprites/ladder-folded.png" id="1_mtwkk"]
+[ext_resource type="Texture2D" uid="uid://brny5nn7e8oim" path="res://assets/item-sprites/ladder-unfolds- intermediate.png" id="2_qpa4v"]
+[ext_resource type="Texture2D" uid="uid://be3ijnesoe6c7" path="res://assets/item-sprites/ladder-unfolded.png" id="3_xxxru"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3hjt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mtwkk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mtwkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qpa4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xxxru")
+}],
+"loop": true,
+"name": &"defold",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xxxru")
+}],
+"loop": true,
+"name": &"unfolded",
+"speed": 5.0
+}]
+
+[node name="ladder" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -8)
+scale = Vector2(0.468254, 0.468254)
+sprite_frames = SubResource("SpriteFrames_y3hjt")
+animation = &"defold"
+autoplay = "default"
+frame_progress = 0.889844
