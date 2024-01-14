@@ -77,5 +77,5 @@ func _draw():
                                 centroid.y - r*sin(child.rotation))
             var stop = Vector2(centroid.x + r*cos(child.rotation),
                                centroid.y + r*sin(child.rotation))
-            draw_line(start, stop, Color.CHOCOLATE, size.y)
+            draw_line(start, stop, Color.BLACK, size.y)
 

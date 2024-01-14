@@ -43,13 +43,8 @@ func _process(delta):
     #var line = CollisionPolygon2D.new()
     #line.set_polygon([pts[0], pts[1], Vector2(0,0)])
     #landscape.add_child(line)
-    # Save it somewhere. Dictionary?
     # Save it to current node for now.
     self.add_child(landscape)
-
-    # Use position as dict key. FIXME: sort.
-    #var pt_key_array = [pts[0].x, pts[0].y, pts[1].x, pts[1].y]
-    #segments[pt_key_array] = landscape
     # Cleanup for defining a new line from future clicks.
     clicked_pt_count = 0
     pts.clear()

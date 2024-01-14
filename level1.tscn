@@ -81,13 +81,22 @@ position = Vector2(550, 97)
 position = Vector2(980, 444)
 
 [node name="Area2D" parent="Node2D2" instance=ExtResource("6_6ovls")]
-position = Vector2(-648, -420)
+position = Vector2(-646, -420)
 
 [node name="Area2D2" parent="Node2D2" instance=ExtResource("6_6ovls")]
-position = Vector2(2, -350)
+position = Vector2(-169, -119)
 
 [node name="Area2D3" parent="Node2D2" instance=ExtResource("6_6ovls")]
-position = Vector2(-614, -116)
+position = Vector2(-504, -207)
+
+[node name="Area2D4" parent="Node2D2" instance=ExtResource("6_6ovls")]
+position = Vector2(-524, -421)
+
+[node name="Area2D5" parent="Node2D2" instance=ExtResource("6_6ovls")]
+position = Vector2(-45, -114)
+
+[node name="Area2D6" parent="Node2D2" instance=ExtResource("6_6ovls")]
+position = Vector2(-738, -193)
 
 [node name="testarea" type="Area2D" parent="."]
 position = Vector2(980, 444)
