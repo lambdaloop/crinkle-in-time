@@ -1,0 +1,168 @@
+{
+	"textures": [
+		{
+			"image": "jane.png",
+			"size": {
+				"w": 1891,
+				"h": 1011
+			},
+			"sprites": [
+				{
+					"filename": "jane-scrunch-1.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 474,
+						"h": 549
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "jane-run-1.png",
+					"region": {
+						"x": 1,
+						"y": 552,
+						"w": 411,
+						"h": 458
+					},
+					"margin": {
+						"x": 1,
+						"y": 0,
+						"w": 1,
+						"h": 11
+					}
+				},
+				{
+					"filename": "jane-falls.png",
+					"region": {
+						"x": 477,
+						"y": 1,
+						"w": 418,
+						"h": 475
+					},
+					"margin": {
+						"x": 8,
+						"y": 0,
+						"w": 42,
+						"h": 0
+					}
+				},
+				{
+					"filename": "jane-boosts-1.png",
+					"region": {
+						"x": 897,
+						"y": 1,
+						"w": 398,
+						"h": 445
+					},
+					"margin": {
+						"x": 68,
+						"y": 50,
+						"w": 146,
+						"h": 109
+					}
+				},
+				{
+					"filename": "jane-run-2.png",
+					"region": {
+						"x": 1297,
+						"y": 1,
+						"w": 338,
+						"h": 463
+					},
+					"margin": {
+						"x": 21,
+						"y": 0,
+						"w": 75,
+						"h": 0
+					}
+				},
+				{
+					"filename": "jane-boosts-2.png",
+					"region": {
+						"x": 1637,
+						"y": 1,
+						"w": 253,
+						"h": 617
+					},
+					"margin": {
+						"x": 159,
+						"y": 53,
+						"w": 307,
+						"h": 115
+					}
+				},
+				{
+					"filename": "jane-scrunch-2.png",
+					"region": {
+						"x": 477,
+						"y": 478,
+						"w": 301,
+						"h": 521
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "jane-climbs-2.png",
+					"region": {
+						"x": 780,
+						"y": 478,
+						"w": 281,
+						"h": 513
+					},
+					"margin": {
+						"x": 130,
+						"y": 25,
+						"w": 263,
+						"h": 73
+					}
+				},
+				{
+					"filename": "jane-stands.png",
+					"region": {
+						"x": 1063,
+						"y": 466,
+						"w": 298,
+						"h": 482
+					},
+					"margin": {
+						"x": 19,
+						"y": 4,
+						"w": 90,
+						"h": 34
+					}
+				},
+				{
+					"filename": "jane-climbs-1.png",
+					"region": {
+						"x": 1363,
+						"y": 466,
+						"w": 256,
+						"h": 504
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:25281fa23199526af3760d21f5fce426:73625a45241606d8ac63239da02d6e61:9dda4b4b83b9de8cedd33cdc8ad7b442$"
+	}
+}
