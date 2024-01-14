@@ -35,12 +35,13 @@ func _process(delta):
     landscape.add_child(collision_shape)
     # connect to a callback function, but bind the callee.
     landscape.connect("input_event", _on_landscape_clicked.bind(landscape))
-    # This works with polgyons too if we have at least 3 points.
+    # This works with polgyons too if we have at least 3A built-in data s points.
     #var line = CollisionPolygon2D.new()
     #line.set_polygon([pts[0], pts[1], Vector2(0,0)])
     #landscape.add_child(line)
     # Save it to current node for now.
     self.add_child(landscape)
+    queue_redraw() # draw the landscape element.
     # Cleanup for defining a new line from future clicks.
     clicked_pt_count = 0
     pts.clear()
@@ -51,10 +52,30 @@ func _on_any_connection_pt_clicked(connection_pt):
     if pts.size() < 1 || pts[-1] != pt:
         pts.append(pt)
         clicked_pt_count += 1
-    #print(pts)
     
 func _on_landscape_clicked(viewport: Node, event: InputEvent, shape_idx: int,
                            landscape: Node):
     if event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
-        print(landscape)
-        landscape.queue_free()
+        landscape.queue_free() # remove child safely at the end of frame
+        self.remove_child(landscape) # remove child from tree now so we redraw
+                                     # correctly.
+        queue_redraw()
+        
+func _draw():
+    # Draw all static bodies.
+    for child in self.get_children():
+        if child is StaticBody2D:
+            #print("redrawing")
+            # We only have a CollisionShape2D as our only child.
+            # Access that child's RectangleShape2D and underlying size.
+            var size = child.get_child(0).get_shape().get_size()
+            # size is Vector2D of (length, thickness)
+            var centroid = child.position
+            var angle = child.rotation
+            var r = size.x/2
+            var start = Vector2(centroid.x - r*cos(child.rotation),
+                                centroid.y - r*sin(child.rotation))
+            var stop = Vector2(centroid.x + r*cos(child.rotation),
+                               centroid.y + r*sin(child.rotation))
+            draw_line(start, stop, Color.CHOCOLATE, size.y)
+
