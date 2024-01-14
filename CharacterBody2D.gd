@@ -34,6 +34,14 @@ func _physics_process(delta):
 		_animation_player.play("fall")
 
 	move_and_slide()
+	
+	# bounding box
+	var width = get_viewport_rect().size.x
+	if position.x < 30:
+		position.x = 30
+	if position.x > width - 30:
+		position.x = width - 30
+	
 
 
 func _on_mouse_entered():
@@ -46,3 +54,12 @@ func _on_static_body_2d_mouse_entered():
 
 func _on_static_body_2d_mouse_shape_entered(shape_idx):
 	print("mouse entered 3") 
+
+
+func _on_area_2d_area_entered(area):
+	print(area.name)
+	if area.name == "testarea":
+		print("test")
+		get_parent().background.texture = load("res://assets/background-1A-filtered-cut.jpg")
+		get_parent().removable.position.y = -10000
+
