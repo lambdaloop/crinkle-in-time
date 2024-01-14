@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=3 uid="uid://coljpxvkppfjx"]
+
+[ext_resource type="Script" path="res://sam.gd" id="1_bkd6v"]
+[ext_resource type="Texture2D" uid="uid://bh0foyclola6w" path="res://assets/sam-spritesheet.png" id="2_jq5d7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqek7"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phldx"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xd3y"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaojc"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p2af"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiq4i"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unksk"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1b7c"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1jhk"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8y3e"]
+atlas = ExtResource("2_jq5d7")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eqvf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqek7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phldx")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xd3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaojc")
+}],
+"loop": true,
+"name": &"crinkles",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p2af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiq4i")
+}],
+"loop": true,
+"name": &"cut",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unksk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1b7c")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1jhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8y3e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bjri"]
+size = Vector2(62, 78.9688)
+
+[node name="sam" type="CharacterBody2D"]
+script = ExtResource("1_bkd6v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.157562, 0.157562)
+sprite_frames = SubResource("SpriteFrames_eqvf5")
+animation = &"crinkles"
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 0.75)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4bjri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4bjri")
