@@ -39,21 +39,16 @@ func _process(delta):
 	# connect to a callback function, but bind the callee.
 	landscape.connect("input_event", _on_landscape_clicked.bind(landscape))
 
-	# This works with polgyons too if we have at least 3 points.
-	#var line = CollisionPolygon2D.new()
-	#line.set_polygon([pts[0], pts[1], Vector2(0,0)])
-	#landscape.add_child(line)
-	# Save it somewhere. Dictionary?
-	# Save it to current node for now.
-	self.add_child(landscape)
-
-	# Use position as dict key. FIXME: sort.
-	#var pt_key_array = [pts[0].x, pts[0].y, pts[1].x, pts[1].y]
-	#segments[pt_key_array] = landscape
-	# Cleanup for defining a new line from future clicks.
-	clicked_pt_count = 0
-	pts.clear()
-	
+    # This works with polgyons too if we have at least 3 points.
+    #var line = CollisionPolygon2D.new()
+    #line.set_polygon([pts[0], pts[1], Vector2(0,0)])
+    #landscape.add_child(line)
+    # Save it to current node for now.
+    self.add_child(landscape)
+    # Cleanup for defining a new line from future clicks.
+    clicked_pt_count = 0
+    pts.clear()
+    
 func _on_any_connection_pt_clicked(connection_pt):
 	# line drawing logic here.
 	var pt = Vector2(connection_pt.position.x, connection_pt.position.y)
