@@ -7,13 +7,13 @@ var segments: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	clicked_pt_count = 0
-	pts = Array()
-	segments = Dictionary()
-	# Connect every ConnectionPt's "is_clicked" signal to a handler fn. 
-	for child in get_children():
-		if child is ConnectionPoint:
-			child.connect("is_clicked", _on_any_connection_pt_clicked)
+    clicked_pt_count = 0
+    pts = Array()
+    segments = Dictionary()
+    # Connect every ConnectionPt's "is_clicked" signal to a handler fn. 
+    for child in get_children():
+        if child is ConnectionPoint:
+            child.connect("is_clicked", _on_any_connection_pt_clicked)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

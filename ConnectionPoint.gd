@@ -19,6 +19,6 @@ func _draw():
     draw_circle(Vector2(0, 0), shape.radius, Color.BLACK)
 
 func _on_collision_obj2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
-	if event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
-		#print("I'm clicked!")
-		is_clicked.emit(self)
+    if event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
+        #print("I'm clicked!")
+        is_clicked.emit(self)
