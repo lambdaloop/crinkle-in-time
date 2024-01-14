@@ -5,6 +5,9 @@ var clicked_pt_count: int
 var pts: Array
 var segments: Dictionary
 
+const CONNECTION_PT_RADIUS = 15 # FIXME: this should be driven from
+                                # ConnectionPoint.
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     clicked_pt_count = 0
@@ -27,7 +30,9 @@ func _process(delta):
     var shape = RectangleShape2D.new()
     var length = sqrt(pow((pts[0].x - pts[1].x), 2) 
                      +pow((pts[0].y - pts[1].y), 2))
-    shape.set_size(Vector2(length, 20))
+    # Create shape slightly offset from node so we don't
+    # accidentally click on it.
+    shape.set_size(Vector2(length-(CONNECTION_PT_RADIUS*2), 20))
     landscape.position.x = (pts[0].x + pts[1].x)/2
     landscape.position.y = (pts[0].y + pts[1].y)/2
     landscape.rotation = (pts[1] - pts[0]).angle()
