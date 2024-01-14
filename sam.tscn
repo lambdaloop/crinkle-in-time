@@ -107,14 +107,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bjri"]
-size = Vector2(62, 78.9688)
+size = Vector2(62, 90.4844)
 
 [node name="sam" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_bkd6v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.157562, 0.157562)
+scale = Vector2(0.18425, 0.18425)
 sprite_frames = SubResource("SpriteFrames_eqvf5")
 animation = &"crinkles"
 autoplay = "default"

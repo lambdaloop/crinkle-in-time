@@ -13,7 +13,7 @@ func _physics_process(delta):
 func jump():
     jumping = true
     $AnimatedSprite2D.play("jump")
-    velocity.x = 100
+    velocity.x = 60
     var tween = create_tween()
     tween.tween_property(self, "position:y", position.y - 100, 1)
     tween.tween_callback(func(): jumping = false)

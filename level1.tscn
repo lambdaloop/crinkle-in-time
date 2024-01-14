@@ -80,7 +80,7 @@ position = Vector2(631, 118)
 position = Vector2(451, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jump"]
-position = Vector2(5, -1)
+position = Vector2(-11, 0)
 shape = SubResource("RectangleShape2D_da6id")
 
 [node name="Node2D2" parent="." instance=ExtResource("5_foefw")]
