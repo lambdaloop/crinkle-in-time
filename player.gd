@@ -38,12 +38,14 @@ func _physics_process(delta):
 
     if not is_on_floor():
         _animation.play("fall")
-    else:
+    
+    if is_on_floor() or is_on_wall():
         if position.y - last_y > 200:
           print(position.y - last_y)
           print("death")
           get_parent().handle_death()
         last_y = position.y
+        
         
     if position.y > height:
         print("fell to death")

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 @onready var background = $Background
 @onready var removable = $collisions/removable
@@ -15,5 +16,7 @@ func _process(delta):
 
 func handle_death():
     var game_over_screen = game_over_scene.instantiate()
+    var scene = get_tree().get_current_scene()
+    game_over_screen.scene_to_load = scene.scene_file_path
     self.add_child(game_over_screen)
     get_tree().paused = true

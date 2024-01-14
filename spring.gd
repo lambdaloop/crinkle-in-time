@@ -7,7 +7,7 @@ func _physics_process(delta):
     if jumping: 
         move_and_slide()
         return
-    velocity.x = 100
+    velocity.x = 50
     super._physics_process(delta)
 
 func jump():
