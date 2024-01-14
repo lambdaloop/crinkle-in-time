@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuke2"]
-size = Vector2(99, 79)
+size = Vector2(45.5, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s4v"]
 size = Vector2(32, 142)
@@ -50,15 +50,12 @@ script = ExtResource("1_uca3m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.323413, 0.323413)
 sprite_frames = SubResource("SpriteFrames_y3hjt")
-animation = &"defold"
 autoplay = "default"
-frame = 2
-frame_progress = 1.0
 
 [node name="unfold" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unfold"]
-position = Vector2(14, -95)
+position = Vector2(24, -112)
 shape = SubResource("RectangleShape2D_cuke2")
 
 [node name="climb" type="Area2D" parent="."]

@@ -25,11 +25,18 @@ func _on_unfold_area_entered(area):
         
 func unfold():
     _animation_player.play("defold")
+    _animation_player.connect("animation_finished", finished_unfolding)
+    
+        
+func finished_unfolding():
+    _animation_player.disconnect("animation_finished", finished_unfolding)
     folded = false
+    # handle areas already in the place
     for area in $climb.get_overlapping_areas():
-        _on_climb_area_entered(area)    
+        _on_climb_area_entered(area)  
 
 func _on_climb_area_entered(area):
+    if folded: return
     var parent = area.get_parent()
     if parent is Player:
         parent.climb()

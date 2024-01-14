@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3wgte444h44n"]
+
+[ext_resource type="Texture2D" uid="uid://bb0u8nl11tkhj" path="res://assets/item-sprites/bucket-sit.png" id="1_1cjmn"]
+[ext_resource type="Script" path="res://bucket.gd" id="1_t77vo"]
+[ext_resource type="Texture2D" uid="uid://vpibqdjjgv5b" path="res://assets/item-sprites/bucket-spills.png" id="2_p84go"]
+[ext_resource type="Texture2D" uid="uid://dtdn2x7qa083t" path="res://assets/item-sprites/bucket-spills-flat.png" id="3_kjyyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pconf"]
+size = Vector2(83, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxkqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1cjmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1cjmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p84go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kjyyg")
+}],
+"loop": false,
+"name": &"spill",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kjyyg")
+}],
+"loop": true,
+"name": &"spilled",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qj7v7"]
+size = Vector2(169, 91)
+
+[node name="bucket" type="Area2D"]
+script = ExtResource("1_t77vo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38.5, 5.5)
+shape = SubResource("RectangleShape2D_pconf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3535, 0.3535)
+sprite_frames = SubResource("SpriteFrames_kxkqf")
+animation = &"spilled"
+autoplay = "default"
+
+[node name="SpillArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpillArea"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_qj7v7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
