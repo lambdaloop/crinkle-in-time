@@ -3,7 +3,6 @@ extends Node2D
 
 var clicked_pt_count: int
 var pts: Array
-var segments: Dictionary
 
 const CONNECTION_PT_RADIUS = 15 # FIXME: this should be driven from
                                 # ConnectionPoint.
@@ -12,7 +11,6 @@ const CONNECTION_PT_RADIUS = 15 # FIXME: this should be driven from
 func _ready():
     clicked_pt_count = 0
     pts = Array()
-    segments = Dictionary()
     # Connect every ConnectionPt's "is_clicked" signal to a handler fn. 
     for child in get_children():
         if child is ConnectionPoint:
@@ -57,6 +55,8 @@ func _on_any_connection_pt_clicked(connection_pt):
     if pts.size() < 1 || pts[-1] != pt:
         pts.append(pt)
         clicked_pt_count += 1
+    # Recolor a connected node.
+    queue_redraw()
     
 func _on_landscape_clicked(viewport: Node, event: InputEvent, shape_idx: int,
                            landscape: Node):
@@ -83,3 +83,5 @@ func _draw():
             var stop = Vector2(centroid.x + r*cos(child.rotation),
                                centroid.y + r*sin(child.rotation))
             draw_line(start, stop, Color.BLACK, size.y)
+    if pts.size() == 1:
+        draw_circle(pts[0], CONNECTION_PT_RADIUS + 5, Color.GREEN)

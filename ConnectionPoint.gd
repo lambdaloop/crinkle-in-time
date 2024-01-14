@@ -13,10 +13,13 @@ func _ready():
 func _process(delta):
     pass
     
+func get_radius():
+    # Only one child node.
+    return self.get_children()[0].get_shape().radius
+    
 func _draw():
-    # Only one childe node.
     var shape = self.get_children()[0].get_shape()
-    draw_circle(Vector2(0, 0), shape.radius, Color.BLACK)
+    draw_circle(Vector2(0, 0), self.get_radius(), Color.BLACK)
 
 func _on_collision_obj2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
     if event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
