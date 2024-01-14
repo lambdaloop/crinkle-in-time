@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cny2s1on7gx3b"]
+[gd_scene load_steps=6 format=3 uid="uid://cny2s1on7gx3b"]
 
+[ext_resource type="Script" path="res://fire.gd" id="1_oeo7e"]
 [ext_resource type="Texture2D" uid="uid://dgog2qcxc6ea2" path="res://assets/item-sprites/fire-1.png" id="1_sji1h"]
 [ext_resource type="Texture2D" uid="uid://d2th7nys8pnim" path="res://assets/item-sprites/fire-2.png" id="2_hlhgk"]
 
@@ -21,6 +22,7 @@ animations = [{
 size = Vector2(40, 73.75)
 
 [node name="fire" type="Area2D"]
+script = ExtResource("1_oeo7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.225764, 0.225764)

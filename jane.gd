@@ -6,7 +6,7 @@ extends Player
 
 func _physics_process(delta):
     # Handle jump.
-    velocity.x = 50
+    velocity.x = 70
     super._physics_process(delta)
 
     

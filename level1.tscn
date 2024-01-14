@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bcom4ftm40tf6"]
+[gd_scene load_steps=18 format=3 uid="uid://bcom4ftm40tf6"]
 
 [ext_resource type="Script" path="res://level1.gd" id="1_ah5r8"]
 [ext_resource type="Texture2D" uid="uid://6oc67hil64fo" path="res://assets/background-1A-filtered.jpg" id="2_2xepe"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://6hb74rhwfi6i" path="res://jane.tscn" id="6_uxedj"]
 [ext_resource type="PackedScene" uid="uid://coljpxvkppfjx" path="res://sam.tscn" id="7_lugva"]
 [ext_resource type="PackedScene" uid="uid://bl8ivp7q774hf" path="res://ladder.tscn" id="9_v74qc"]
+[ext_resource type="PackedScene" uid="uid://c3wgte444h44n" path="res://bucket.tscn" id="10_3ummi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he87v"]
 size = Vector2(318, 319)
@@ -125,3 +126,6 @@ position = Vector2(40, 63)
 
 [node name="jane" parent="." instance=ExtResource("6_uxedj")]
 position = Vector2(138, 151)
+
+[node name="bucket" parent="." instance=ExtResource("10_3ummi")]
+position = Vector2(710, 119)

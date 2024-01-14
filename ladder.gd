@@ -26,6 +26,7 @@ func _on_unfold_area_entered(area):
 func unfold():
     _animation_player.play("defold")
     folded = false
+    # handle areas already in the place
     for area in $climb.get_overlapping_areas():
         _on_climb_area_entered(area)    
 
