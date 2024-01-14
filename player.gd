@@ -24,6 +24,7 @@ func _physics_process(delta):
     
     # bounding box
     var width = get_viewport_rect().size.x
+    var height = get_viewport_rect().size.y
     if position.x < 30:
         position.x = 30
     if position.x > width - 30:
@@ -42,6 +43,9 @@ func _physics_process(delta):
           print(position.y - last_y)
           print("death")
         last_y = position.y
+        
+    if position.y > height:
+        print("fell to death")
 
 func add_controls(delta):
     if Input.is_action_just_pressed("ui_up") and is_on_floor():
