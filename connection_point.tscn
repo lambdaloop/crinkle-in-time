@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://ConnectionPoint.gd" id="1_i7vpy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mshqt"]
+radius = 49.0102
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_i7vpy")

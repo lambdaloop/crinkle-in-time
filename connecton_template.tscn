@@ -1,16 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkrpr4lx481y2"]
+[gd_scene load_steps=2 format=3 uid="uid://bkrpr4lx481y2"]
 
 [ext_resource type="Script" path="res://level2.gd" id="1_rf8ra"]
-[ext_resource type="PackedScene" uid="uid://cyic1gc55csax" path="res://connection_point.tscn" id="2_h1o8u"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rf8ra")
-
-[node name="ConnectionPoint" parent="." groups=["connection_pts"] instance=ExtResource("2_h1o8u")]
-position = Vector2(185, 440)
-
-[node name="ConnectionPoint2" parent="." groups=["connection_pts"] instance=ExtResource("2_h1o8u")]
-position = Vector2(783, 436)
-
-[node name="ConnectionPoint3" parent="." groups=["connection_pts"] instance=ExtResource("2_h1o8u")]
-position = Vector2(517, 251)
