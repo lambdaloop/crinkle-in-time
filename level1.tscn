@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cny2s1on7gx3b" path="res://fire.tscn" id="4_3iy63"]
 [ext_resource type="PackedScene" uid="uid://bkrpr4lx481y2" path="res://connecton_template.tscn" id="5_foefw"]
 [ext_resource type="PackedScene" uid="uid://cyic1gc55csax" path="res://connection_point.tscn" id="6_6ovls"]
-[ext_resource type="PackedScene" path="res://spring.tscn" id="6_fbbrw"]
-[ext_resource type="PackedScene" path="res://jane.tscn" id="6_uxedj"]
-[ext_resource type="PackedScene" path="res://sam.tscn" id="7_lugva"]
-[ext_resource type="PackedScene" path="res://ladder.tscn" id="9_v74qc"]
-[ext_resource type="PackedScene" path="res://bucket.tscn" id="10_3ummi"]
+[ext_resource type="PackedScene" uid="uid://cs01u6j2vbyql" path="res://spring.tscn" id="6_fbbrw"]
+[ext_resource type="PackedScene" uid="uid://6hb74rhwfi6i" path="res://jane.tscn" id="6_uxedj"]
+[ext_resource type="PackedScene" uid="uid://coljpxvkppfjx" path="res://sam.tscn" id="7_lugva"]
+[ext_resource type="PackedScene" uid="uid://bl8ivp7q774hf" path="res://ladder.tscn" id="9_v74qc"]
+[ext_resource type="PackedScene" uid="uid://c3wgte444h44n" path="res://bucket.tscn" id="10_3ummi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da6id"]
 

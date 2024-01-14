@@ -16,5 +16,6 @@ func _process(delta):
 func handle_death():
     var game_over_screen = game_over_scene.instantiate()
     self.add_child(game_over_screen)
-    #get_tree().paused = true
+    
+
     
