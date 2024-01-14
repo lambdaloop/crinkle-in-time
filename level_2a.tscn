@@ -12,7 +12,7 @@
 size = Vector2(128, 195.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2jf4"]
-size = Vector2(173, 156)
+size = Vector2(292, 156)
 
 [node name="level2a" type="Node2D"]
 script = ExtResource("1_sle0y")
@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_jwap2")
 [node name="StaticBody2D3" type="StaticBody2D" parent="collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisions/StaticBody2D3"]
-position = Vector2(1078.5, 640)
+position = Vector2(1138, 640)
 shape = SubResource("RectangleShape2D_d2jf4")
 
 [node name="connections" parent="." instance=ExtResource("1_78lfc")]
@@ -64,7 +64,7 @@ position = Vector2(997, 514)
 position = Vector2(928, 383)
 
 [node name="Area2D9" parent="connections" instance=ExtResource("2_586sa")]
-position = Vector2(541, 377)
+position = Vector2(542, 376)
 
 [node name="Area2D10" parent="connections" instance=ExtResource("2_586sa")]
 position = Vector2(1124, 288)
@@ -72,11 +72,11 @@ position = Vector2(1124, 288)
 [node name="Area2D11" parent="connections" instance=ExtResource("2_586sa")]
 position = Vector2(1215, 173)
 
-[node name="Area2D5" parent="connections" instance=ExtResource("2_586sa")]
-position = Vector2(457, 629)
-
 [node name="Area2D3" parent="connections" instance=ExtResource("2_586sa")]
-position = Vector2(34, 704)
+position = Vector2(38, 686)
+
+[node name="Area2D5" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(465, 623)
 
 [node name="spring" parent="." instance=ExtResource("4_xunpm")]
 position = Vector2(54, 200)
@@ -85,4 +85,4 @@ position = Vector2(54, 200)
 position = Vector2(13, 216)
 
 [node name="jane" parent="." instance=ExtResource("6_cclft")]
-position = Vector2(12, 214)
+position = Vector2(75, 214)

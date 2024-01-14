@@ -42,14 +42,15 @@ func _physics_process(delta):
     if is_on_floor() or is_on_wall():
         if position.y - last_y > 200:
           print(position.y - last_y)
-          print("death")
-          get_parent().handle_death()
+          #print("death")
+          #get_parent().handle_death()
         last_y = position.y
         
         
     if position.y > height:
-        print("fell to death")
-        get_parent().handle_death()
+        #print("fell to death")
+        pass
+        #get_parent().handle_death()
 
 func add_controls(delta):
     if Input.is_action_just_pressed("ui_up") and is_on_floor():
