@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cs01u6j2vbyql"]
+[gd_scene load_steps=12 format=3 uid="uid://cs01u6j2vbyql"]
 
 [ext_resource type="Script" path="res://spring.gd" id="1_7scth"]
 [ext_resource type="Texture2D" uid="uid://bpp30iq42s4rt" path="res://assets/spring-spritesheet.png" id="2_rgl5t"]
@@ -19,11 +19,7 @@ region = Rect2(682, 1364, 682, 682)
 atlas = ExtResource("2_rgl5t")
 region = Rect2(1364, 0, 682, 682)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vd3mh"]
-atlas = ExtResource("2_rgl5t")
-region = Rect2(0, 682, 682, 682)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_voc3n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek4we"]
 atlas = ExtResource("2_rgl5t")
 region = Rect2(682, 682, 682, 682)
 
@@ -66,10 +62,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vd3mh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_voc3n")
+"texture": SubResource("AtlasTexture_ek4we")
 }],
 "loop": true,
 "name": &"jump",
@@ -88,16 +81,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bjri"]
-size = Vector2(62, 78.9688)
+size = Vector2(62, 97.9922)
 
 [node name="spring" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_7scth")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.114904, 0.114904)
+scale = Vector2(0.154226, 0.154226)
 sprite_frames = SubResource("SpriteFrames_vkr0q")
-animation = &"run"
 autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
