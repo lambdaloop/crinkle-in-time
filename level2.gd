@@ -1,4 +1,6 @@
 extends Node2D
+const LandscapeSegmentScene = preload("res://landscape_segment.tscn")
+
 
 var clicked_pt_count: int
 var pts: Array
@@ -16,34 +18,53 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if clicked_pt_count != 2:
-		return
-	# Make a segment with the current set of points.
-	var landscape = Area2D.new()
-	landscape.visible = true
-	var line = CollisionShape2D.new()
-	var shape = SegmentShape2D.new()
-	shape.a = pts[0]
-	shape.b = pts[1]
-	line.set_shape(shape)
-	# This works with polgyons too if we have at least 3 points.
-	#var line = CollisionPolygon2D.new()
-	#line.set_polygon([pts[0], pts[1], Vector2(0,0)])
-	landscape.add_child(line)
-	# Save it somewhere. Dictionary?
-	# Save it to current node for now.
-	self.add_child(landscape)
-	# Use position as dict key. FIXME: sort.
-	#var pt_key_array = [pts[0].x, pts[0].y, pts[1].x, pts[1].y]
-	#segments[pt_key_array] = landscape
-	# Cleanup for defining a new line from future clicks.
-	clicked_pt_count = 0
-	pts.clear()
-	
+    if clicked_pt_count != 2:
+        return
+    # Make a segment with the current set of points.
+    var landscape = Area2D.new()
+    # Add is_clicked signal
+    landscape.visible = true
+    landscape.input_pickable = true
+    var line = CollisionShape2D.new()
+    var shape = RectangleShape2D.new()
+    var length = sqrt(pow((pts[0].x - pts[1].x), 2) 
+                     +pow((pts[0].y - pts[1].y), 2))
+    shape.set_size(Vector2(length, 20))
+    landscape.position.x = (pts[0].x + pts[1].x)/2
+    landscape.position.y = (pts[0].y + pts[1].y)/2
+    landscape.rotation = (pts[1] - pts[0]).angle()
+    line.set_shape(shape)
+    landscape.add_child(line)
+    # connect to a callback function, but bind the callee.
+    landscape.connect("input_event", _on_landscape_clicked.bind(landscape))
+
+    # This works with polgyons too if we have at least 3 points.
+    #var line = CollisionPolygon2D.new()
+    #line.set_polygon([pts[0], pts[1], Vector2(0,0)])
+    #landscape.add_child(line)
+    # Save it somewhere. Dictionary?
+    # Save it to current node for now.
+    self.add_child(landscape)
+
+    # Use position as dict key. FIXME: sort.
+    #var pt_key_array = [pts[0].x, pts[0].y, pts[1].x, pts[1].y]
+    #segments[pt_key_array] = landscape
+    # Cleanup for defining a new line from future clicks.
+    clicked_pt_count = 0
+    pts.clear()
+    
 func _on_any_connection_pt_clicked(connection_pt):
-	# line drawing logic here.
-	var pt = Vector2(connection_pt.position.x, connection_pt.position.y)
-	if pts.size() < 1 || pts[-1] != pt:
-		pts.append(pt)
-		clicked_pt_count += 1
-	#print(pts)
+    # line drawing logic here.
+    var pt = Vector2(connection_pt.position.x, connection_pt.position.y)
+    if pts.size() < 1 || pts[-1] != pt:
+        pts.append(pt)
+        clicked_pt_count += 1
+    #print(pts)
+    
+func _on_landscape_clicked(viewport: Node, event: InputEvent, shape_idx: int,
+                           landscape: Node):
+    if event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
+        print("landsape clicked!")
+        print(landscape)
+        landscape.queue_free()
+        print(event)
