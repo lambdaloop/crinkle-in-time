@@ -55,7 +55,10 @@ func _on_any_connection_pt_clicked(connection_pt):
     if pts.size() < 1 || pts[-1] != pt:
         pts.append(pt)
         clicked_pt_count += 1
-    # Recolor a connected node.
+    elif pts.size() == 1 && pt == pts[-1]:
+        pts.pop_back()
+        clicked_pt_count -= 1
+    # Recolor a connected/unconnected node.
     queue_redraw()
     
 func _on_landscape_clicked(viewport: Node, event: InputEvent, shape_idx: int,
