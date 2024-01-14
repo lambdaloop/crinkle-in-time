@@ -13,7 +13,7 @@
 size = Vector2(318, 319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avpca"]
-size = Vector2(247.5, 233.5)
+size = Vector2(247.5, 232.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3407k"]
 size = Vector2(1009, 30)
@@ -50,7 +50,7 @@ shape = SubResource("RectangleShape2D_he87v")
 input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(121.25, 370)
+position = Vector2(121.25, 370.375)
 shape = SubResource("RectangleShape2D_avpca")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -95,7 +95,7 @@ position = Vector2(-524, -421)
 position = Vector2(-45, -114)
 
 [node name="Area2D6" parent="Node2D2" instance=ExtResource("6_6ovls")]
-position = Vector2(-738, -193)
+position = Vector2(-739, -178)
 
 [node name="testarea" type="Area2D" parent="."]
 position = Vector2(980, 444)
@@ -105,9 +105,10 @@ position = Vector2(30.5, 23.5)
 shape = SubResource("RectangleShape2D_25v4g")
 
 [node name="spring" parent="." instance=ExtResource("6_fbbrw")]
+z_index = 100
 
 [node name="sam" parent="." instance=ExtResource("7_lugva")]
-position = Vector2(210, 150)
+position = Vector2(21, 144)
 
 [node name="jane" parent="." instance=ExtResource("6_uxedj")]
-position = Vector2(95, 62)
+position = Vector2(14, 62)
