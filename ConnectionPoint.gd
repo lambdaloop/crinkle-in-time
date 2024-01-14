@@ -10,7 +10,6 @@ func _ready():
     input_pickable = true
     self.connect("input_event", _on_collision_obj2d_input_event)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     pass
