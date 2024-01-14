@@ -10,6 +10,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var is_climbing = false
+@onready var last_y = position.y
 
 func _physics_process(delta):
     if is_climbing:
@@ -36,6 +37,11 @@ func _physics_process(delta):
 
     if not is_on_floor():
         _animation.play("fall")
+    else:
+        if position.y - last_y > 200:
+          print(position.y - last_y)
+          print("death")
+        last_y = position.y
 
 func add_controls(delta):
     if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -55,7 +61,7 @@ func climb():
     is_climbing = true
     var tween = create_tween()
     _animation.play("climb")
-    tween.tween_property(self, "position:y", position.y - 50, 0.5)
+    tween.tween_property(self, "position:y", position.y - 60, 0.5)
     tween.tween_callback(func(): _animation.play("run"))
     tween.chain().tween_property(self, "position:x", position.x + 60, 0.5)
     tween.tween_callback(func(): is_climbing = false)

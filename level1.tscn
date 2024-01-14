@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3wgte444h44n" path="res://bucket.tscn" id="10_3ummi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he87v"]
-size = Vector2(318, 319)
+size = Vector2(324, 319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avpca"]
 size = Vector2(247.5, 232.75)
@@ -47,7 +47,7 @@ expand_mode = 1
 input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(653, 330.5)
+position = Vector2(650, 330.5)
 shape = SubResource("RectangleShape2D_he87v")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -108,6 +108,12 @@ position = Vector2(-45, -114)
 [node name="Area2D6" parent="Node2D2" instance=ExtResource("6_6ovls")]
 position = Vector2(-739, -178)
 
+[node name="Area2D7" parent="Node2D2" instance=ExtResource("6_6ovls")]
+position = Vector2(216, 247)
+
+[node name="Area2D8" parent="Node2D2" instance=ExtResource("6_6ovls")]
+position = Vector2(-22, 248)
+
 [node name="testarea" type="Area2D" parent="."]
 position = Vector2(832, 446)
 
@@ -120,9 +126,10 @@ position = Vector2(472, 228)
 
 [node name="spring" parent="." instance=ExtResource("6_fbbrw")]
 z_index = 100
+position = Vector2(34, 130)
 
 [node name="sam" parent="." instance=ExtResource("7_lugva")]
-position = Vector2(40, 63)
+position = Vector2(72, 139)
 
 [node name="jane" parent="." instance=ExtResource("6_uxedj")]
 position = Vector2(138, 151)
