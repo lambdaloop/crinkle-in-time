@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://csiy2d6g07sj"]
+
+[ext_resource type="PackedScene" uid="uid://bkrpr4lx481y2" path="res://connecton_template.tscn" id="1_78lfc"]
+[ext_resource type="Texture2D" uid="uid://bascv6w40kguk" path="res://assets/background-2B-filtered.jpg" id="1_crni2"]
+[ext_resource type="PackedScene" uid="uid://cyic1gc55csax" path="res://connection_point.tscn" id="2_586sa"]
+[ext_resource type="PackedScene" path="res://spring.tscn" id="4_osvad"]
+[ext_resource type="PackedScene" path="res://sam.tscn" id="5_b5qqg"]
+[ext_resource type="PackedScene" path="res://jane.tscn" id="6_2i2qm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b18se"]
+size = Vector2(1294, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px8cy"]
+size = Vector2(267, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh6cr"]
+size = Vector2(302, 208.5)
+
+[node name="level2a" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1278.0
+offset_bottom = 718.0
+texture = ExtResource("1_crni2")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(637, 519.5)
+shape = SubResource("RectangleShape2D_b18se")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(400.5, 422)
+shape = SubResource("RectangleShape2D_px8cy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1123, 399.25)
+shape = SubResource("RectangleShape2D_eh6cr")
+
+[node name="connections" parent="." instance=ExtResource("1_78lfc")]
+
+[node name="Area2D" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(243, 34)
+
+[node name="Area2D2" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(972, 212)
+
+[node name="Area2D3" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(972, 300)
+
+[node name="Area2D4" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(530, 363)
+
+[node name="Area2D5" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(263, 371)
+
+[node name="Area2D6" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(194, 451)
+
+[node name="spring" parent="." instance=ExtResource("4_osvad")]
+z_index = 100
+position = Vector2(28, 290)
+
+[node name="sam" parent="." instance=ExtResource("5_b5qqg")]
+position = Vector2(66, 299)
+
+[node name="jane" parent="." instance=ExtResource("6_2i2qm")]
+position = Vector2(105, 317)
