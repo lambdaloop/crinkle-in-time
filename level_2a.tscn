@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhbqiyu4e40to"]
+
+[ext_resource type="PackedScene" uid="uid://bkrpr4lx481y2" path="res://connecton_template.tscn" id="1_78lfc"]
+[ext_resource type="PackedScene" uid="uid://cyic1gc55csax" path="res://connection_point.tscn" id="2_586sa"]
+[ext_resource type="Texture2D" uid="uid://0c1e2gyxd7yp" path="res://assets/background-2A-filtered.jpg" id="3_r2iwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b18se"]
+size = Vector2(144, 292)
+
+[node name="level2a" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1278.0
+offset_bottom = 718.0
+texture = ExtResource("3_r2iwb")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(62, 430)
+shape = SubResource("RectangleShape2D_b18se")
+
+[node name="connections" parent="." instance=ExtResource("1_78lfc")]
+
+[node name="Area2D" parent="connections" instance=ExtResource("2_586sa")]
+position = Vector2(140, 309)
