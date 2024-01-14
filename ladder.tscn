@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl8ivp7q774hf"]
+[gd_scene load_steps=8 format=3 uid="uid://bl8ivp7q774hf"]
 
 [ext_resource type="Texture2D" uid="uid://7lfxcy7wmbx3" path="res://assets/item-sprites/ladder-folded.png" id="1_mtwkk"]
+[ext_resource type="Script" path="res://ladder.gd" id="1_uca3m"]
 [ext_resource type="Texture2D" uid="uid://brny5nn7e8oim" path="res://assets/item-sprites/ladder-unfolds- intermediate.png" id="2_qpa4v"]
 [ext_resource type="Texture2D" uid="uid://be3ijnesoe6c7" path="res://assets/item-sprites/ladder-unfolded.png" id="3_xxxru"]
 
@@ -24,9 +25,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_xxxru")
 }],
-"loop": true,
+"loop": false,
 "name": &"defold",
-"speed": 0.5
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -37,14 +38,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ladder" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuke2"]
+size = Vector2(99, 79)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37s4v"]
+size = Vector2(32, 142)
+
+[node name="ladder" type="Node2D"]
+script = ExtResource("1_uca3m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -8)
-scale = Vector2(0.468254, 0.468254)
+scale = Vector2(0.323413, 0.323413)
 sprite_frames = SubResource("SpriteFrames_y3hjt")
 animation = &"defold"
 autoplay = "default"
-frame_progress = 0.889844
+frame = 2
+frame_progress = 1.0
+
+[node name="unfold" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unfold"]
+position = Vector2(14, -95)
+shape = SubResource("RectangleShape2D_cuke2")
+
+[node name="climb" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="climb"]
+position = Vector2(15, 32)
+shape = SubResource("RectangleShape2D_37s4v")
+
+[connection signal="area_entered" from="unfold" to="." method="_on_unfold_area_entered"]
+[connection signal="body_entered" from="unfold" to="." method="_on_unfold_body_entered"]
+[connection signal="area_entered" from="climb" to="." method="_on_climb_area_entered"]

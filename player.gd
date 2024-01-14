@@ -9,7 +9,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var is_climbing = false
+
 func _physics_process(delta):
+    if is_climbing:
+        return
+    
     # Add the gravity.
     if not is_on_floor():
         velocity.y += gravity * delta
@@ -44,3 +49,13 @@ func add_controls(delta):
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
         
+func climb():
+    if is_climbing:
+        return
+    is_climbing = true
+    var tween = create_tween()
+    _animation.play("climb")
+    tween.tween_property(self, "position:y", position.y - 50, 0.5)
+    tween.tween_callback(func(): _animation.play("run"))
+    tween.chain().tween_property(self, "position:x", position.x + 60, 0.5)
+    tween.tween_callback(func(): is_climbing = false)

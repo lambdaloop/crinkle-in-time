@@ -1,5 +1,5 @@
 extends Player
-class_name Spring
+#class_name Spring
 
 var jumping = false
 
@@ -7,7 +7,7 @@ func _physics_process(delta):
     if jumping: 
         move_and_slide()
         return
-    velocity.x = 50
+    velocity.x = 80
     super._physics_process(delta)
 
 func jump():
